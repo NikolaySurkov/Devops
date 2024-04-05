@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+_random_agent() {
+    agent=(\
+        "\"Mozilla/5.0 (Macintosh; Intel Mac OS X 11.1; rv:84.0) Gecko/20100101 Firefox/84.0\""  \
+        "\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36\"" \
+        "\"Opera/9.80 (Windows NT 6.2; Win64; x64) Presto/2.12.388 Version/12.17\"" \
+        "\"Safari/537.36 OPR/74.0.3911.218 (Edition Yx 05)\"" \
+        "\"Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0; IEMobile/9.0)\"" \
+        "\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.19582\"" \
+        "\"Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)\"" \
+        "\"curl/7.64.1\"" \
+        "\"Mozilla/5.0 (Linux; Android 7.0; SM-G930V Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.125 Mobile Safari/537.36 (compatible; Google-Read-Aloud; +https://support.google.com/webmasters/answer/1061943)\"" \
+        "\"Python-urllib/2.7\"")
+
+    index=$(shuf -i 0-9 -n 1)
+    echo  "${agent[$index]}"
+}
+

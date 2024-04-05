@@ -1,0 +1,15 @@
+#!/bin/bash
+
+_create_file_log() {
+    folder_log="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/logs/"
+    if [[ ! -d "$folder_log" ]] ; then
+        mkdir "${folder_log}"
+    fi
+    filename=$1
+    if  touch "${folder_log}${filename}" 2>/dev/null ; then
+        echo -n "${folder_log}${filename}"
+    else
+        echo -n "ERROR"
+    fi 
+}
+

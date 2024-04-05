@@ -1,0 +1,9 @@
+#!/bin/bash
+
+_generate_ip() {
+    first=127
+    second=$(shuf -i 0-255 -n 1)
+    third=$(shuf -i 0-255 -n 1)
+    fourth=$(shuf -i 0-255 -n 1)
+    echo -n "$first.$second.$third.$fourth "
+}

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+_generator_codes() {
+    codes=(200 201 400 401 403 404 500 501 502 503)
+    code=$(shuf -e "${codes[@]}" -n 1)
+    echo -n " ${code} "
+}

@@ -1,0 +1,14 @@
+FROM nginx:latest
+
+WORKDIR /home/hello_world_miniserver
+
+COPY /server/hello_world_server.c /home/hello_world_miniserver/
+COPY /part_3/hello_world_server.sh /home/hello_world_miniserver/
+COPY /server/nginx.conf /etc/nginx/nginx.conf
+
+RUN apt-get update; \
+    apt-get install -y libfcgi-dev\
+    spawn-fcgi \
+    gcc
+
+CMD ["sh", "./hello_world_server.sh"]

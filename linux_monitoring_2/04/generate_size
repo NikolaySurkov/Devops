@@ -1,0 +1,8 @@
+#!/bin/bash
+
+_generate_size() {
+    min_s=64
+    max_s=4091
+    size_request=$(shuf -i $min_s-$max_s -n 1)
+    echo -n "${size_request} \"-\" "
+}

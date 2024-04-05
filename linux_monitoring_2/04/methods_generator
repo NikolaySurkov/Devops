@@ -1,0 +1,11 @@
+#!/bin/bash
+
+_generate_metod() {
+    random_metod="\""
+    random_metod+="$(shuf -e GET POST PUT PATCH DELETE -n 1)"
+    random_metod+=" $(shuf -e "/status" "/id" "/profile" "/deal_in" "/deal_out" "/position"\
+    " /buying_price" "/selling_price" "/open_time" "/close_time/volume" "/profit" "/balance" "/server_id"  "/"  "/products/index.php" -n 1)"
+    random_metod+=" $(shuf -e HTTP/1.0 HTTP/1.1 HTTP/2 -n 1)"
+    echo -n "${random_metod}\""
+}
+
